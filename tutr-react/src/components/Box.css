@@ -1,0 +1,45 @@
+.box {
+    border-radius: 15px;
+    background-color: #336EE2;
+    width: 500px;
+    height:282px;
+    position: relative;
+    color: white;
+    margin: 53px;
+
+}
+.header{
+    font-family: HelveticaNowBold;
+    font-size: 36px;
+    padding-top: 14px;
+}
+.button {
+    background-color: #719AEB;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    height:46px;
+    border-radius:25px
+  }
+@font-face {
+    font-family: HelveticaNowBold;
+    src: url(../fonts/HelveticaNow/HelveticaNowText-Bold.woff);
+  }
+@font-face {
+    font-family: HelveticaNow;
+    src: url(../fonts/HelveticaNow/HelveticaNowText-Light.woff);
+}
+.subdiv {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
