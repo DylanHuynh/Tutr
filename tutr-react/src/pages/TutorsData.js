@@ -2,10 +2,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./UnapprovedMatches.css"
-import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
 
-import Modal from "../components/Modal.js";
 import TableComp from "../components/TableComp.js";
 
 const exampleData = {
@@ -30,28 +27,27 @@ const exampleData = {
     }]
 
 };
-function UnapprovedMatches() {
+function TutorsData() {
 
 
     return (
         <div className="App">
             <div>
-                <Navbar bg="primary" variant="dark">
-                    <Navbar.Brand href="/">Lowell CSF</Navbar.Brand>
-                    <Nav className="mr-auto">
-                        <Nav.Link href="officerDash">About</Nav.Link>
-                        <Nav.Link href="resources">Resources</Nav.Link>
-                        <Nav.Link href="contact">Contact</Nav.Link>
-                        <Nav.Link href="faq">FAQ</Nav.Link>
+            <Navbar bg="primary" variant="dark">
+            <Navbar.Brand href="/">Lowell CSF</Navbar.Brand>
+            <Nav className="mr-auto">
+            <Nav.Link href="officerDash">Dashboard</Nav.Link>
+            <Nav.Link href="tutorsData">Tutors</Nav.Link>
+            <Nav.Link href="tuteesData">Tutees</Nav.Link>
+            <Nav.Link href="faq">Applications</Nav.Link>
+            </Nav>
+        </Navbar>
+        </div>
 
-                    </Nav>
-                </Navbar>
-            </div>
-
-            <TableComp modalButtonType={"viewPotentialMatches"}/>
+            <TableComp/>
         </div>
 
     );
 }
 
-export default UnapprovedMatches;
+export default TutorsData;

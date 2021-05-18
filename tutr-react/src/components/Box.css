@@ -2,15 +2,14 @@
     border-radius: 15px;
     background-color: #336EE2;
     width: 400px;
-    height:282px;
     position: relative;
     color: white;
     margin: 53px;
-
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.3);
 }
 .header{
     font-family: HelveticaNowBold;
-    font-size: 36px;
+    font-size: 30px;
     padding-top: 14px;
 }
 .button {

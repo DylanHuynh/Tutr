@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: HelveticaNow;
 }
 
 .App-logo {
@@ -12,7 +13,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+@font-face {
+  font-family: HelveticaNowBold;
+  src: url(./fonts/HelveticaNow/HelveticaNowText-Bold.woff);
+}
+@font-face {
+  font-family: HelveticaNow;
+  src: url(./fonts/HelveticaNow/HelveticaNowText-Light.woff);
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

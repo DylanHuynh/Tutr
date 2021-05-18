@@ -22,10 +22,23 @@ function ModalComp(props) {
     let openButton = <Button variant="primary" onClick={handleShow}>
         Launch demo modal
 </Button>;
-    if (props.buttonType === "viewMatches") {
-        console.log("here")
+    if (props.buttonType === "viewPotentialMatches") {
         openButton = <Button variant="primary" onClick={handleShow}>
-            View potential matches
+            View Potential Matches
+    </Button>
+    } else if (props.buttonType == "makeMatch") {
+        openButton =  <input type="radio" value="someIdTODO" name="match" />;
+    } else if (props.buttonType == "viewRequests") {
+        openButton = <Button variant="primary" onClick={handleShow}>
+            View All Requests
+    </Button>
+    } else if (props.buttonType == "viewModSheets") {
+        openButton = <Button variant="primary" onClick={handleShow}>
+            View Mod Sheets
+    </Button>
+    } else if (props.buttonType == "viewAllMatches") {
+        openButton = <Button variant="primary" onClick={handleShow}>
+            View All Matches
     </Button>
     }
 

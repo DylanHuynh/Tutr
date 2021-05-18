@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table';
 import React, { useEffect, useState } from 'react';
-
+import "./TableComp.css";
 import Modal from "../components/Modal.js";
 let data = {
     columnHeaders: [{
@@ -22,7 +22,7 @@ let data = {
         id: "teacher",
         type: "string"
     }, {
-        label: "email",
+        label: "Email",
         id: "tuteeName",
         type: "string"
     }, {
@@ -50,7 +50,28 @@ let data = {
     }]
 
 };
-const modalContent = <TableComp button={true} />
+const modalContent =
+    <div className="modal-container">
+        <div className="tutee-info-container">
+            <div className="tutee-info-list">
+                Name:
+            </div>
+            <div className="tutee-info-list">
+                Name:
+            </div>
+            <div className="tutee-info-list">
+                Name:
+            </div>
+            <div className="tutee-info-list">
+                Name:
+            </div>
+
+        </div>
+
+        <div>
+            <TableComp modalButtonType={"makeMatch"} button={true} />
+        </div>
+    </div>;
 
 function TableComp(props) {
 
@@ -84,10 +105,10 @@ function TableComp(props) {
 
     // }
     for (const header of tblData.columnHeaders) {
-        colHeaders.push(<th className="no-right-left-border">{header.label}</th>);
+        colHeaders.push(<th className="no-right-left-border no-top-border">{header.label}</th>);
     }
     if (props.modalButtonType) {
-        colHeaders.push(<th className="no-border">Make changes</th>);
+        colHeaders.push(<th className="no-border no-top-border">Make changes</th>);
     }
     for (const row of tblData.rowData) {
         for (const header of tblData.columnHeaders) {
@@ -98,11 +119,11 @@ function TableComp(props) {
                 }
                 word = word.substring(2)
             } else {
-                word  = row[header.id];
+                word = row[header.id];
             }
             rowTemp.push(<td className="no-right-left-border">
-                    {word}
-                </td>);
+                {word}
+            </td>);
 
         }
 
@@ -127,7 +148,7 @@ function TableComp(props) {
     return (
 
         <div>
-            <Table bordered hover>
+            <Table style={{borderTop:"none"}}bordered hover>
                 <thead>
                     <tr>
                         {tbl.colHeaders}
