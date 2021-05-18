@@ -14,7 +14,7 @@ function OfficerDash() {
             <Navbar.Brand href="home">Lowell CSF</Navbar.Brand>
             <Nav className="mr-auto">
             <Nav.Link href="officerDash">About</Nav.Link>
-            <Nav.Link href="resources">Resources</Nav.Link>
+            <Nav.Link href="unapprovedMatches">Resources</Nav.Link>
             <Nav.Link href="contact">Contact</Nav.Link>
             <Nav.Link href="faq">FAQ</Nav.Link>
 

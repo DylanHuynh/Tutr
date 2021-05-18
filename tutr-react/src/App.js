@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./pages/Home.js";
 import OfficerDash from "./pages/OfficerDash.js";
+import UnapprovedMatches from './pages/UnapprovedMatches';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
        <Router>
                 <Route exact path="/" render={(props) => <Home/>} />
                 <Route exact path="/officerDash" render={(props) => <OfficerDash/>} />
+                <Route exact path="/unapprovedMatches" render={(props) => <UnapprovedMatches/>} />
 
             </Router>
     </div>
