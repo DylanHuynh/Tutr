@@ -15,17 +15,13 @@ import TuteesData from './pages/TuteesData.js';
 function App() {
   return (
     <div className="App">
-       <Router>
+            <Router>
                 <Route exact path="/" render={(props) => <Home/>} />
                 <Route exact path="/officerDash" render={(props) => <OfficerDash/>} />
                 <Route exact path="/unapprovedMatches" render={(props) => <UnapprovedMatches/>} />
                 <Route exact path="/tuteesLanding" render={(props) => <TuteesLanding/>} />
                 <Route exact path="/tutorsData" render={(props) => <TutorsData/>} />
                 <Route exact path="/tuteesData" render={(props) => <TuteesData/>} />
-
-
-
-
             </Router>
     </div>
   );
