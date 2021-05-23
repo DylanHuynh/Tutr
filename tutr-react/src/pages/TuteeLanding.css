@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    justify-content: center;
+}
+.landing-header {
+    font-size: 36px;
+    margin-top: 30px;
+    font-family: HelveticaNowBold;
+}
+
+.landing-subheader {
+    font-size: 30px;
+    margin-top: 30px;
+    font-family: HelveticaNowBold;
+}
+
+.landing-content {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+@font-face {
+    font-family: HelveticaNowBold;
+    src: url(../fonts/HelveticaNow/HelveticaNowText-Bold.woff);
+  }

@@ -4,6 +4,28 @@ import Table from 'react-bootstrap/Table';
 import React, { useEffect, useState } from 'react';
 import "./TableComp.css";
 import Modal from "../components/Modal.js";
+
+const dictToContent = (request, classNameStr) => {
+    let rowTemp = [];
+    let row = request.content;
+    for (const header of request.columnHeaders) {
+            let word = "";
+            if (header.type === "array") {
+                for (const elem of row[header.id]) {
+                    word += ", " + elem;
+                }
+                word = word.substring(2)
+            } else {
+                word = row[header.id];
+            }
+            rowTemp.push(<div className={classNameStr}>
+                <div>{header.label}: </div> <div style={{fontWeight: "normal", marginLeft: "10px"}}> {word}</div>
+            </div>);
+
+
+    }
+    return rowTemp
+}
 let data = {
     columnHeaders: [{
         label: "Tutee Name",
@@ -50,21 +72,40 @@ let data = {
     }]
 
 };
+let selectedRequest = {
+    columnHeaders: [{
+        label: "Tutee Name",
+        id: "tuteeName",
+        type: "string"
+    }, {
+        label: "Availability",
+        id: "availability",
+        type: "array"
+    }, {
+        label: "Class",
+        id: "class",
+        type: "string"
+    }, {
+        label: "Teacher",
+        id: "teacher",
+        type: "string"
+    }],
+    content: {
+        tuteeName: "Bob Smith",
+        availability: ["1", "3", "AS"],
+        class: "AP Bio",
+        teacher: "Killpack"
+    }
+
+}
+
+let tuteeInfoContent = dictToContent(selectedRequest,"tutee-info-list");
+
+
 const modalContent =
     <div className="modal-container">
         <div className="tutee-info-container">
-            <div className="tutee-info-list">
-                Name:
-            </div>
-            <div className="tutee-info-list">
-                Name:
-            </div>
-            <div className="tutee-info-list">
-                Name:
-            </div>
-            <div className="tutee-info-list">
-                Name:
-            </div>
+            {tuteeInfoContent}
 
         </div>
 
@@ -108,7 +149,7 @@ function TableComp(props) {
         colHeaders.push(<th className="no-right-left-border no-top-border">{header.label}</th>);
     }
     if (props.modalButtonType) {
-        colHeaders.push(<th className="no-border no-top-border">Make changes</th>);
+        colHeaders.push(<th className="no-border no-top-border"></th>);
     }
     for (const row of tblData.rowData) {
         for (const header of tblData.columnHeaders) {

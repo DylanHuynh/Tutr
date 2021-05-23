@@ -1,0 +1,31 @@
+.section-header {
+    margin-bottom: 20px;
+    font-weight:bold;
+    font-size: 30px;
+    font-family: HelveticaNowBold;
+    margin-top: 50px;
+}
+@font-face {
+    font-family: HelveticaNowBold;
+    src: url(../fonts/HelveticaNow/HelveticaNowText-Bold.woff);
+  }
+.subsection-header {
+    color: #4ca4ff;
+    margin-bottom: 10px;
+    font-family: HelveticaNowBold;
+
+}
+
+.subsection-body {
+    color: black;
+    margin-bottom: 30px;
+
+}
+.faq-header {
+    font-weight:bold;
+    font-size: 30px;
+    font-family: HelveticaNowBold;
+    margin-left:30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

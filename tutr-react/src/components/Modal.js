@@ -40,7 +40,12 @@ function ModalComp(props) {
         openButton = <Button variant="primary" onClick={handleShow}>
             View All Matches
     </Button>
+    } else if (props.buttonType == "sendEmail") {
+        openButton = <Button variant="primary" onClick={handleShow}>
+            Email
+    </Button>
     }
+
 
     return (
         <>

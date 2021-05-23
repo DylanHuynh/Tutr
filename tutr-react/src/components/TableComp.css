@@ -1,8 +1,14 @@
 .tutee-info-list {
-    border-bottom: 1px solid rgba(94, 94, 94, 0.5);
+    border-bottom: 1px solid rgba(94, 94, 94, 0.2);
+    margin-bottom: 24px;
+    display:flex;
+
 }
 .tutee-info-container {
-    width:150px;
+    width: 300px;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-top: 26px;
 }
 .modal-container {
     display: flex;

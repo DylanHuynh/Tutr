@@ -16,3 +16,14 @@
     border-right-style: hidden !important;
     border-left-style: hidden !important;
 }
+.table-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+}
+
+.header {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}

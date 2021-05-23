@@ -34,3 +34,35 @@ def make_match(req_id, tutor_id):
     '''
     made_match = graph.run(match_tutors_query, id=id)
     return "success"
+
+def update_request(update):
+    # #TODO: diffs
+    # update = {
+    #     id: 17232,
+    #     diffs: {
+    #         first_name: "Jennifer",
+    #         subject: "Physics"
+    #     }
+    # }
+
+    # Map<String, Object> n1 = new HashMap<>();
+    # n1.put( "name", "Andy" );
+    # n1.put( "position", "Developer" );
+
+    # Map<String, Object> params = new HashMap<>();
+    # params.put( "props", n1 );
+
+    # String query =
+    #     "MATCH (n:Person)" + "\n" +
+    #     "WHERE n.name = 'Michaela'" + "\n" +
+    #     "SET n = $props";
+
+    # transaction.execute( query, params);
+
+    update_req_query = '''
+        MATCH (p:Person {name: 'Jennifer'})
+        SET p.birthdate = date('1980-01-01')
+        RETURN p
+    '''
+    update_req = graph.run(update_req_query, parameters=update["diffs"], id=update["id"])
+    return "changed ___ attributes"

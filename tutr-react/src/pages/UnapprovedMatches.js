@@ -47,8 +47,13 @@ function UnapprovedMatches() {
                     </Nav>
                 </Navbar>
             </div>
+            <div className="header">
+                Unapproved Matches
+            </div>
+            <div className="table-container">
 
-            <TableComp modalButtonType={"viewPotentialMatches"}/>
+                <TableComp modalButtonType={"viewPotentialMatches"}/>
+            </div>
         </div>
 
     );

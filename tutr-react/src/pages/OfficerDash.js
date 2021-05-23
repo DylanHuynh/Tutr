@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 
 import Box from "../components/Box.js";
 import Modal  from "../components/Modal.js";
+import TableComp  from "../components/TableComp.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./OfficerDash.css";
@@ -15,23 +16,26 @@ const requestContent = <div><p>Unreviewed Tutor Requests</p><br/><p>Unreviewed T
 
 function OfficerDash() {
   return (
-    <div className="App">
+    <div className="App" style={{textAlign: "center"}}>
         <div>
             <Navbar bg="primary" variant="dark">
-            <Navbar.Brand href="/">Lowell CSF</Navbar.Brand>
-            <Nav className="mr-auto">
-            <Nav.Link href="officerDash">Dashboard</Nav.Link>
-            <Nav.Link href="tutorsData">Tutors</Nav.Link>
-            <Nav.Link href="tuteesData">Tutees</Nav.Link>
-            <Nav.Link href="faq">Applications</Nav.Link>
-            </Nav>
-        </Navbar>
+              <Navbar.Brand href="/">Lowell CSF</Navbar.Brand>
+              <Nav className="mr-auto">
+              <Nav.Link href="officerDash">Dashboard</Nav.Link>
+              <Nav.Link href="tutorsData">Tutors</Nav.Link>
+              <Nav.Link href="tuteesData">Tutees</Nav.Link>
+              <Nav.Link href="faq">Applications</Nav.Link>
+              </Nav>
+          </Navbar>
         </div>
         <div>
+          <div className="header">
             Officer Dashboard
+
+          </div>
             <div className="container">
                 <Box header="Matches To-Do" content={matchesToDoContent} buttonComp={<Button href="unapprovedMatches">View Unapproved Matches</Button>}/>
-                <Box header="All Matches" content={allMatchesContent} buttonComp={<Modal buttonType="viewAllMatches"/>}/>
+                <Box header="All Matches" content={allMatchesContent} buttonComp={<Modal content={<TableComp modalButtonType={"sendEmail"}/>} buttonType="viewAllMatches"/>}/>
 
                 <Box header="Tutor/Tutee Requests" content={requestContent} buttonComp={<Modal buttonType="viewRequests"/>}/>
                 <Box header="Mod Sheet Record" content={modSheetContent} buttonComp={<Modal buttonType="viewModSheets"/>}/>

@@ -12,6 +12,19 @@ def login():
         return '<h1>joemama</h1>'
     else:
         return '<h1>mamajoe</h1>'
+
+@app.route('/active_requests',methods=['GET','POST'])
+def active_requests():
+    if request.method == 'GET':
+        return neo.get_active_tutee_data()
+    if  request.method == 'POST':
+        return "yeet"
+@app.route('/viable_tutors',methods=['GET'])
+def viable_tutors(id):
+    if request.method == 'GET':
+        return neo.get_viable_tutors(id)
+
+
 # TODO:
 # 1. Get all tutor data in correct format
 # 2. Get all tutee data formatted
