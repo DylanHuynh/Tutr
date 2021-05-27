@@ -44,7 +44,7 @@ function TutorsData() {
         </Navbar>
         </div>
 
-            <TableComp/>
+            <TableComp modalButtonType={"editInfo"}/>
         </div>
 
     );

@@ -122,8 +122,7 @@ function TableComp(props) {
     let colHeaders = [];
     // Update the document title using the browser API
     tblData = props.data || tblData;
-    console.log(props.button);
-    console.log(tblData);
+
 
     // for (const row of tblData.rowData) {
 
@@ -151,6 +150,7 @@ function TableComp(props) {
     if (props.modalButtonType) {
         colHeaders.push(<th className="no-border no-top-border"></th>);
     }
+    let rowIndex = 0;
     for (const row of tblData.rowData) {
         for (const header of tblData.columnHeaders) {
             let word = "";
@@ -170,20 +170,21 @@ function TableComp(props) {
 
 
         if (props.modalButtonType) {
-            items.push(<tr >{rowTemp}<td className="no-border no-border-bottom"><Modal buttonType={props.modalButtonType} content={modalContent} header="Match Maker" /></td></tr>);
+            items.push(<tr >{rowTemp}<td className="no-border no-border-bottom"><Modal rowIndex={rowIndex} buttonType={props.modalButtonType} content={modalContent} header="Match Maker" /></td></tr>);
 
         } else {
             items.push(<tr >{rowTemp}</tr>);
 
         }
         rowTemp = [];
+        rowIndex += 1;
     }
 
     const [tbl, setTbl] = useState({
         colHeaders: colHeaders,
         rowData: items
     });
-    console.log(items);
+
 
 
     return (
