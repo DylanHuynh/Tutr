@@ -12,9 +12,9 @@ import "./Home.css";
 function Home() {
   const [response, setResponse] = useState("yee")
   useEffect(() => {
-    axios.get('/login')
+    axios.get('/login_header')
       .then(res => res.data)
-      .then(data => setResponse(data))
+      .then(data => console.log(data))
       .catch(error => {
         console.log(error)
       })
@@ -26,12 +26,13 @@ function Home() {
         <Nav className="mr-auto">
           <Nav.Link href="officerDash">About</Nav.Link>
           <Nav.Link href="unapprovedMatches">Resources</Nav.Link>
-          <Nav.Link href="tuteeLnding">Contact</Nav.Link>
+          <Nav.Link href="tuteeLanding">Contact</Nav.Link>
           <Nav.Link href="faq">FAQ</Nav.Link>
 
         </Nav>
 
       </Navbar>
+      {Object.keys(response)}
       <Box height="300px" header="First Time Here?" buttonComp={
         <div>
           <Button variant="info" href="tuteeLanding">I'm a Tutee</Button>

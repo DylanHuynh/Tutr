@@ -5,28 +5,10 @@ import "./UnapprovedMatches.css"
 
 import TableComp from "../components/TableComp.js";
 
-const exampleData = {
-    columnHeaders: ['Tutee Name', 'Availibility', 'Class', 'Teacher', 'Email', 'Phone #'],
-    rowData: [{
-        tuteeName: "Bob Smith",
-        availability: ["1", "3", "AS"],
-        class: "AP Bio",
-        teacher: "Killpack",
-        email: "bosmith@s.sfusd.edu",
-        phone: "415-123-4567"
-    },
-    {
-        tuteeName: "Bob Smith",
-        availability: ["1", "3", "AS"],
-        class: "AP Bio",
-        teacher: "Killpack",
-        email: "bosmith@s.sfusd.edu",
-        phone: "415-123-4567"
-
-
-    }]
-
-};
+let modalData = {
+    modalHeader: "Edit Info",
+    modalContent: []
+}
 function TutorsData() {
 
 
@@ -39,12 +21,12 @@ function TutorsData() {
             <Nav.Link href="officerDash">Dashboard</Nav.Link>
             <Nav.Link href="tutorsData">Tutors</Nav.Link>
             <Nav.Link href="tuteesData">Tutees</Nav.Link>
-            <Nav.Link href="faq">Applications</Nav.Link>
+            <Nav.Link href="faq">FAQ</Nav.Link>
             </Nav>
         </Navbar>
         </div>
 
-            <TableComp modalButtonType={"editInfo"}/>
+            <TableComp modalData={modalData} modalButtonType={"editInfo"}/>
         </div>
 
     );
